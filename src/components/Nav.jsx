@@ -3,7 +3,7 @@ import logo from "../assets/Transparent.png";
 
 function Nav() {
   return (
-    <nav className="absolute top-0 left-0 z-20 w-full">
+    <nav className="sticky top-0 left-0 z-20 w-full bg-[#000000]">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         
         <Link to="/">
