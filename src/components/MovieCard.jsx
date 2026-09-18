@@ -1,9 +1,12 @@
-function MovieCard({ show }) {
-
+function MovieCard({ show, onSeeDetails }) {
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#0c0c16]">
+    <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0c0c16] transition-all duration-300 hover:-translate-y-2 hover:border-purple-500/40 hover:shadow-xl hover:shadow-purple-500/10">
 
-      <img src={show.image?.medium} alt={show.name} className="h-80 w-full object-cover" />
+      <img
+        src={show.image?.medium}
+        alt={show.name}
+        className="h-80 w-full object-cover transition-transform duration-500 hover:scale-105"
+      />
 
       <div className="p-5">
 
@@ -19,7 +22,10 @@ function MovieCard({ show }) {
           ⭐ {show.rating?.average ?? "N/A"}
         </p>
 
-        <button className="mt-5 rounded-full bg-linear-to-r from-purple-600 to-pink-500 px-5 py-2.5 text-sm font-medium text-white">
+        <button
+          onClick={() => onSeeDetails(show)}
+          className="mt-5 rounded-full bg-linear-to-r from-purple-600 to-pink-500 px-5 py-2.5 text-sm font-medium text-white transition hover:scale-105"
+        >
           See Details
         </button>
 
