@@ -1,18 +1,12 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
+import { getShows } from "./services/movieApi";
 
-const showsPromise = async () => {
-  const response = await fetch(
-    "https://api.tvmaze.com/shows"
-  );
-
-  const data = await response.json();
-  return data;
-};
+const showsPromise = getShows();
 
 function App() {
   return (
@@ -22,15 +16,18 @@ function App() {
         <Route element={<MainLayout />}>
 
           <Route path="/" element={<Home />} />
-          <Route path="/movies" element={
-            <Suspense fallback={
-              <div className="min-h-screen bg-[#05050b] px-6 py-10">
-                <p>Movies List Loading ....</p>
-              </div>
-            }>
-              <Movies showsPromise={showsPromise()} />
-            </Suspense>
-          }
+
+          <Route
+            path="/movies"
+            element={
+              <Suspense fallback={
+                <div className="min-h-screen bg-[#05050b] px-6 py-10">
+                  <p className="text-center text-lg text-gray-400">Movies Loading..</p>
+                </div>
+              }>
+                <Movies showsPromise={showsPromise} />
+              </Suspense>
+            }
           />
 
         </Route>

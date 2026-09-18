@@ -4,7 +4,7 @@ import banner from "../assets/Banner.png";
 function Home() {
   return (
     <section className="relative min-h-screen overflow-hidden">
-      
+
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${banner})` }}
@@ -12,15 +12,15 @@ function Home() {
 
       <div className="absolute inset-0 bg-linear-to-r from-black via-black/70 to-transparent"></div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-6 pt-20">
-        
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center px-4 pt-20 sm:px-6">
+
         <div className="max-w-2xl">
-          
+
           <p className="mb-5 text-sm font-medium uppercase tracking-[0.35em] text-purple-300">
             Explore • Discover • Watch
           </p>
 
-          <h1 className="text-5xl font-bold leading-tight text-white md:text-7xl">
+          <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
             Find Your
             <br />
             <span className="bg-linear-to-r from-purple-500 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent">
@@ -30,7 +30,7 @@ function Home() {
             Movie
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-gray-300 sm:text-lg">
             Explore amazing shows, discover new stories, and find your next
             favorite movie with Movie Explorer.
           </p>
